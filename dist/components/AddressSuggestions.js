@@ -13,13 +13,15 @@ export class AddressSuggestions extends React.PureComponent {
         };
         this.onInputFocus = () => {
             this.setState({ inputFocused: true });
-            if (this.state.suggestions.length == 0) {
+            const suggestions = this.state.suggestions;
+            if (suggestions && suggestions.length == 0) {
                 this.fetchSuggestions();
             }
         };
         this.onInputBlur = () => {
             this.setState({ inputFocused: false });
-            if (this.state.suggestions.length == 0) {
+            const suggestions = this.state.suggestions;
+            if (suggestions && suggestions.length == 0) {
                 this.fetchSuggestions();
             }
         };
